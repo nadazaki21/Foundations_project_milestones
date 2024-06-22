@@ -1,0 +1,15 @@
+img {
+    width: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    border-radius: 5px;
+    background-color: rgba(92, 214, 133, 0.164);
+   
+}
+
+.bell:hover {
+   
+    transform: scale(1.1);
+}
+    
