@@ -1,8 +1,8 @@
-from flask import request, jsonify, session, Blueprint
+from flask import request, jsonify, session, Blueprint, url_for
 from models.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from database import db
-
+from requests import request as req
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -10,7 +10,7 @@ auth_bp = Blueprint('auth', __name__)
 def signup():
    
     data = request.json
-    print("Request data:", data)
+    # print("Request data:", data)
     username = data.get('username')
     email = data.get('email')
     password = data.get('password')
@@ -35,8 +35,25 @@ def signup():
         print(e)
         return jsonify({'message': 'Internal server error'}), 500
 
-@auth_bp.route('/login', methods=['POST'], strict_slashes = False)
+
+
+@auth_bp.route('/user-data', methods=['GET'], strict_slashes = False)
+def user_data():
+   
+    if not session.get('user_id'):
+        return jsonify({'message': 'Not loged in'}), 401 # to check if a user is logged in or not
+    
+    user_id = session['user_id']
+    username = session['username']
+    user_email = session['user_email']
+   
+    return jsonify({'user_id': user_id, 'username': username, 'user_email': user_email}) , 200
+
+
+
+@auth_bp.route('/log-in', methods=['POST'], strict_slashes = False)
 def login():
+    
     data = request.json
     email = data.get('email')
     password = data.get('password')
@@ -47,25 +64,19 @@ def login():
     try:
         user = User.query.filter_by(email=email).first()
         if user and check_password_hash(user.password, password):
+
             session['user_id'] = user.id
             session['username'] = user.username
             session['user_email'] = user.email
+            session.modified = True
+            
+            print ({'user_id': user.id, 'username': user.username, 'user_email': user.email})
             return jsonify({'message': 'User Loged successfully!'}), 201
+            
+ 
         else:
             return jsonify({'message': 'Invalid email or password'}), 401
     except Exception as e:
         return jsonify({'message': 'Internal server error'}), 500
 
 
-@auth_bp.route('/user-data', methods=['GET'], strict_slashes = False)
-def user_data():
-    # return(sess.__dict__)
-    if not session.__dict__.get('user_id'):
-        return jsonify({'message': 'Not loged in'}), 401 # to check if a user is logged in or not
-    
-    user_id = session['user_id']
-    username = session['username']
-    user_email = session['user_email']
-   
-    return jsonify({'user_id': user_id, 'username': username, 'user_email': user_email}) , 200
- 
