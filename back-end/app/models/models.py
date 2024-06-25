@@ -54,7 +54,7 @@ class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     creation_date = db.Column(db.DateTime, default=datetime.utcnow)
-
+    # manager = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     phases = db.relationship('Phase', backref='project', lazy=True)
     owners = db.relationship('User', secondary=project_owners,
                              back_populates='owned_projects')
