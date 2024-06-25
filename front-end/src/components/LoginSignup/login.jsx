@@ -14,14 +14,18 @@ const Login = () => {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:5000/login', {
+            const response = await axios.post('http://localhost:5000/log-in', {
                 email,
                 password,
-            });
+            },
+            {
+                withCredentials : true,
+            }
+            );
             
             if (response.status === 201) {
                 alert('Login successful!');
-                navigate('/', { replace: true });
+                navigate('/');
             } else {
                 alert(`Login failed: ${response.data.message}`);
             }

@@ -77,8 +77,8 @@ class Phase(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
-    start_date = db.Column(db.DateTime, nullable=False)
-    end_date = db.Column(db.DateTime, nullable=False)
+    # creation_date = db.Column(db.DateTime, nullable=False)
+    # end_date = db.Column(db.DateTime, nullable=False)
     tasks = db.relationship('Task', backref='phase', lazy=True)
 
     def to_dict(self):

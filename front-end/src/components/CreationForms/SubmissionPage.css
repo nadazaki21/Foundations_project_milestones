@@ -1,0 +1,141 @@
+/* General styling */
+
+.submission-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  color: #343a40;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-name {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.success-message {
+  font-size: 18px;
+  color: #28a745;
+  background-color: #d4edda;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+.phases-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.phase {
+  flex: 1 1 calc(50% - 20px); /* Two phases side by side with spacing */
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.phase:hover {
+  transform: translateY(-5px);
+}
+
+.phase-title {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+.phase-details {
+  margin-bottom: 15px;
+  color: #6c757d;
+}
+
+.tasks-list {
+  margin-top: 15px;
+}
+
+.task {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f1f3f5;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+.task-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #212529;
+}
+
+.task-details {
+  margin-bottom: 10px;
+  color: #6c757d;
+}
+
+.subtasks {
+  margin-left: 20px;
+}
+
+.subtask-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.subtask-list li {
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+/* Additional responsive styling */
+@media (max-width: 768px) {
+  .phase {
+    flex: 1 1 100%; /* Stack phases vertically on small screens */
+  }
+}

@@ -1,0 +1,73 @@
+/* NewProjectForm.css */
+
+.form-container {
+    width: 800px; /* Adjust width as needed */
+    margin: auto; /* Center the form container */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+  }
+  
+  .step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }
+  
+  .step.completed {
+    border-color: #007bff; /* Color of completed steps */
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .form-steps {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping of form steps */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    transition: transform 0.3s ease-in-out; /* Add animation for smooth transition */
+  }
+  
+  .form-step {
+    flex: 1;
+    min-width: 100%; /* Ensure each step occupies full width */
+    max-width: 100%; /* Ensure each step occupies full width */
+    display: none; /* Hide all steps initially */
+  }
+  
+  .form-step.active {
+    display: block; /* Display active step */
+  }
+  
+  /* Animation for form step transitions */
+  .form-step {
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
