@@ -1,8 +1,6 @@
 from flask import Blueprint, jsonify
 from models.models import User, Task, Project, Phase
 from database import db
-from requests import request as req
-from .auth import user_data, session
 from wrappers import get_user_if_logged, check_state
 userTasks_bp = Blueprint('taksPanel', __name__)
 

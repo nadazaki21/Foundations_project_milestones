@@ -145,7 +145,8 @@ class Comment(db.Model):
                         nullable=False)
     description = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-
+    # status = db.Column(db.Integer, default=0)
+    # by_user = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     def to_dict(self):
         return {
             'id': self.id,
