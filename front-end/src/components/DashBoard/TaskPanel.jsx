@@ -11,7 +11,7 @@ const TaskPanel = () => {
         const fetchTasks = async () => {
             try {
                 const response = await axios.get('http://localhost:5000/ongoing-tasks', {
-                    withCredentials: true // This ensures credentials like cookies are sent with the request
+                    withCredentials: true 
                 });
                 setTasks(response.data);
             } catch (error) { 
@@ -58,7 +58,7 @@ const TaskPanel = () => {
         </thead>
 
         <tbody>
-            {tasks && Object.keys(tasks).map((key, index) => (
+            { Object.keys(tasks).map((key, index) => (
                 <tr key={index}>
                     <td>{tasks[key].task_name}</td>
                     <td>{tasks[key].project}</td>
