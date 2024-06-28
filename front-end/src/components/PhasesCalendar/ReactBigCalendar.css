@@ -1,20 +1,14 @@
-/* custom-calendar-styles.css */
-
-/* Example: Set a white background for the entire calendar */
 .rbc-calendar {
-    background-color: white; /* Set white background */
+    background-color: white; 
   }
   
-  /* Example: Override event styles */
-  .rbc-event {
-    background-color: #f0f0f0; /* Light gray background for events */
-    border-color: #ccc; /* Light border color */
-  }
-  
-  /* Example: Override date cell styles */
-  .rbc-date-cell {
-    background-color: white; /* White background for date cells */
-  }
-  
-  /* Add more custom styles as needed */
-  
+ 
+.rbc-event {
+  background-color: #f0f0f0; 
+  border-color: #ccc;
+}
+
+
+.rbc-date-cell {
+  background-color: white; 
+}

@@ -20,7 +20,9 @@ const PhaseCalendar = () => {
   const [taskName, setTaskName] = useState('');
 
   useEffect(() => {
-    axios.get('/api/phases')
+    axios.get('http://localhost:5000/calendar_phases', {
+      withCredentials: true
+    })
       .then(response => {
         const phases = response.data;
         const events = phases.map(phase => ({

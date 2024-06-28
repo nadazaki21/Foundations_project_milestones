@@ -9,11 +9,11 @@ const NotificationsButton = () => {
             <div className="colourguide_container">
                 <div className="item">
                 <div id="item1"className="color"></div>
-                <div className="project_name">Project Alpha</div>
+                <div className="project_name_in_chart">Project Alpha</div>
                 </div>
                 <div className="item">
                 <div id="item2" className="color"></div>
-                <div className="project_name">Project Beta</div>
+                <div className="project_name_in_chart">Project Beta</div>
                 </div>
                 
             </div>
