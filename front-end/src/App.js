@@ -5,6 +5,7 @@ import Login from './components/LoginSignup/login';
 import Signup from './components/LoginSignup/signup';
 import PhaseCalendar from './components/PhasesCalendar/ReactBigCalendar';
 import NewProjectForm from './components/CreationForms/NewProjectForm'
+import MyProjects from './components/MyProjects/MyProjects';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/projectinfo",
     element: <NewProjectForm/>
+  },
+  {
+    path: "/myprojects",
+    element: <MyProjects/>
   }
 ]);
 
