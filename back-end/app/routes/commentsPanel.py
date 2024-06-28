@@ -12,10 +12,10 @@ commentsPanel_bp = Blueprint('commentsPanel', __name__)
 @get_user_if_logged 
 def recent_comments(user_id):
 
-    all_user_tasks_dict = {}
+    all_user_comments_dict = {}
     i = 1
-    user_tasks = Comment.query.filter_by(user_id=user_id).all()   
-    for item in user_tasks:
+    comment_for_user = Comment.query.filter_by(user_id=user_id).all()   
+    for item in comment_for_user:
         values_dict = {}
         values_dict['comment'] = item.description
         
@@ -26,7 +26,7 @@ def recent_comments(user_id):
         # values_dict['manager'] = item.task.phase.project.owners
         # print(item.task.phase.project.owners.first().username)
         
-        all_user_tasks_dict[f"item{i}"] = values_dict
+        all_user_comments_dict[f"item{i}"] = values_dict
         i = i + 1
 
-    return jsonify(all_user_tasks_dict)
+    return jsonify(all_user_comments_dict)

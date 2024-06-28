@@ -6,6 +6,7 @@ from database import db
 from routes.auth import auth_bp
 from routes.taskPanel import userTasks_bp
 from routes.commentsPanel import commentsPanel_bp
+from routes.calendar_routes import calPhases_bp
 
 
 app = Flask(__name__)
@@ -40,6 +41,7 @@ CORS(app, supports_credentials=True) # allows requets from all domains since no 
 app.register_blueprint(auth_bp)
 app.register_blueprint(userTasks_bp)
 app.register_blueprint(commentsPanel_bp)
+app.register_blueprint(calPhases_bp)
 
 
 if __name__ == "__main__":
