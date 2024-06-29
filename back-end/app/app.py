@@ -1,18 +1,21 @@
 #!/usr/bin/env python
 from flask import Flask
+from flask_migrate import Migrate
 from flask_session import Session
 from flask_cors import CORS
-from database import db
-from routes.auth import auth_bp
-from routes.taskPanel import userTasks_bp
-from routes.commentsPanel import commentsPanel_bp
-from routes.calendar_routes import calPhases_bp
+from .database import db
+# from flask_sqlalchemy import SQLAlchemy
+from .routes.auth import auth_bp
+from .routes.taskPanel import userTasks_bp
+from .routes.commentsPanel import commentsPanel_bp
+from .routes.calendar_routes import calPhases_bp
 
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1510@localhost/pm'
-
+# db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 app.config['PERMANENT_SESSION_LIFETIME'] # default is 31 days 
 app.config['SECRET_KEY'] = 'hi'
@@ -36,6 +39,7 @@ CORS(app, supports_credentials=True) # allows requets from all domains since no 
 #  If your frontend application is served from a different origin (e.g., http://localhost:3000 for React and http://localhost:5000 for Flask), the browser would normally block the sending of cookies. Setting supports_credentials to True allows the browser to send cookies (including the session ID) with the request, enabling the server to recognize the session.
 # in other means the front will not be able to acess the back - only the local back host would be able 
 # the front send the seesion id from the cookies to the back , this is what the parameter 'with_credentials' does
+
 
 
 app.register_blueprint(auth_bp)

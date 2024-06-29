@@ -1,7 +1,7 @@
 from functools import wraps
-from routes.auth import user_data
+from .routes.auth import user_data
 from flask import jsonify
-from routes.auth import session
+from .routes.auth import session
 
 
 
