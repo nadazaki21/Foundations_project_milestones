@@ -9,18 +9,20 @@ from .routes.auth import auth_bp
 from .routes.taskPanel import userTasks_bp
 from .routes.commentsPanel import commentsPanel_bp
 from .routes.calendar_routes import calPhases_bp
+from .routes.mytasks import task_bp
+from .routes.subtasks import subtask_bp
 
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1510@localhost/pm'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1230@localhost/try'
 # db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 app.config['PERMANENT_SESSION_LIFETIME'] # default is 31 days 
 app.config['SECRET_KEY'] = 'hi'
 app.config['SESSION_USE_SIGNER'] = True #enables session cookie signing , as seesion id is saved encrypted in cookies 
-app.config['SESSION_FILE_DIR'] = '/home/nada-zaki/portfolio-project/Foundations_project_milestones/dump'
+# app.config['SESSION_FILE_DIR'] = '/home/try_here/dump'
 app.config['SESSION_FILE_THRESHOLD'] = 100 #app.config['SESSION_FILE_THRESHOLD'] = 100
 app.config['SESSION_COOKIE_HTTPONLY'] = True  #This flag makes the cookie inaccessible to JavaScript running on the client-side
 #This improves security by preventing client-side scripts from accessing the session ID cookie, which helps protect against cross-site scripting (XSS) attacks.
@@ -46,6 +48,8 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(userTasks_bp)
 app.register_blueprint(commentsPanel_bp)
 app.register_blueprint(calPhases_bp)
+app.register_blueprint(task_bp)
+app.register_blueprint(subtask_bp)
 
 
 if __name__ == "__main__":

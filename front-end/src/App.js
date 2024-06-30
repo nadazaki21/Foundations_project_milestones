@@ -6,6 +6,7 @@ import Signup from './components/LoginSignup/signup';
 import PhaseCalendar from './components/PhasesCalendar/ReactBigCalendar';
 import NewProjectForm from './components/CreationForms/NewProjectForm'
 import MyProjects from './components/MyProjects/MyProjects';
+import MyTasksPage from './components/MyTasks/MyTasksPage';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/myprojects",
     element: <MyProjects/>
+  },
+  {
+    path: "/mytasks",
+    element: <MyTasksPage/>
   }
 ]);
 

@@ -1,3 +1,4 @@
+from sqlalchemy import func
 from ..database import db
 from datetime import datetime
 
@@ -77,17 +78,28 @@ class Phase(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     project_id = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
-    # creation_date = db.Column(db.DateTime, nullable=False)
-    # end_date = db.Column(db.DateTime, nullable=False)
     tasks = db.relationship('Task', backref='phase', lazy=True)
+
+    @property
+    def start_date(self):
+        earliest_task_start = db.session.query(func.min(Task.creation_date)).filter_by(phase_id=self.id).scalar()
+        return earliest_task_start
+
+    @property
+    def end_date(self):
+        latest_task_deadline = db.session.query(func.max(Task.deadline)).filter_by(phase_id=self.id).scalar()
+        return latest_task_deadline
+
+    def has_tasks_assigned_to_user(self, user_id):
+        return db.session.query(Task.id).filter_by(phase_id=self.id, assigned_member=user_id).first() is not None
 
     def to_dict(self):
         return {
             'id': self.id,
             'name': self.name,
             'project_id': self.project_id,
-            'start_date': self.start_date.isoformat(),
-            'end_date': self.end_date.isoformat(),
+            'start_date': self.start_date.isoformat() if self.start_date else None,
+            'end_date': self.end_date.isoformat() if self.end_date else None,
             'tasks': [task.to_dict() for task in self.tasks]
         }
 
@@ -145,8 +157,7 @@ class Comment(db.Model):
                         nullable=False)
     description = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    status = db.Column(db.Integer, default=0)
-    by_user = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
     def to_dict(self):
         return {
             'id': self.id,

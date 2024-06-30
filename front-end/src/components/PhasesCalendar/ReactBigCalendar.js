@@ -20,17 +20,18 @@ const PhaseCalendar = () => {
   const [taskName, setTaskName] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/calendar_phases', {
+    axios.get('http://localhost:5000/phases', {
       withCredentials: true
     })
       .then(response => {
+        console.log(response.data);
         const phases = response.data;
         const events = phases.map(phase => ({
           id: phase.id,
-          title: `${phase.name} (Project: ${phase.project.name})`,
+          title: `${phase.name} (Project: ${phase.projectName})`,
           start: new Date(phase.start_date),
           end: new Date(phase.end_date),
-          projectId: phase.project.id,
+          projectId: phase.projectId,
         }));
         setEvents(events);
       })
@@ -40,7 +41,9 @@ const PhaseCalendar = () => {
   }, []);
 
   const handleSelectEvent = (event) => {
-    axios.get(`/api/phases/${event.id}/tasks`)
+    axios.get(`http://localhost:5000/phases/${event.id}/tasks`, {
+    withCredentials: true
+    })
       .then(response => {
         console.log(response.data); // Debug line
         setSelectedTasks(response.data);
