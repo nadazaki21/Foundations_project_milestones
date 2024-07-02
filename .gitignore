@@ -2,3 +2,4 @@
 dump
 front-end/node_modules
 */__pycache__
+./back-end/flask_session

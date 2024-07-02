@@ -10,7 +10,7 @@ const SideButtons = () => {
         <div className="button_container">
         <div className="horizontal_btn">
           <div className="btn"><button onClick={() => navigate('/myprojects')}>My Projects</button></div>
-          <div className="btn"><button>My Tasks</button></div>
+          <div className="btn"><button onClick={() => navigate('/mytasks') }>My Tasks</button></div>
           <div className="btn"><button onClick={() => navigate('/cal') }>My Calender</button></div>
         </div>
       </div>
