@@ -3,7 +3,7 @@ from ..models.models import User, Task, Project, Phase, Comment
 from ..database import db
 from requests import request as req
 from .auth import user_data, session
-from ..wrappers import get_user_if_logged, check_state
+from ..wrappers import get_user_if_logged
 commentsPanel_bp = Blueprint('commentsPanel', __name__)
 
 

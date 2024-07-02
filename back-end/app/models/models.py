@@ -30,7 +30,8 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(128), nullable=False)
 
-    comments = db.relationship('Comment', backref='user', lazy=True)
+    comments = db.relationship('Comment', backref='user', lazy=True) # all of the comments that the user made 
+    
     tasks = db.relationship('Task', backref='user', lazy=True)
 
     owned_projects = db.relationship('Project', secondary=project_owners,
@@ -117,7 +118,7 @@ class Task(db.Model):
     status = db.Column(db.Integer, default=0)
 
     subtasks = db.relationship('Subtask', backref='task', lazy=True)
-    comments = db.relationship('Comment', backref='task', lazy=True)
+    comments = db.relationship('Comment', backref='task', lazy=True) # commenst on that task 
 
     def to_dict(self):
         return {
@@ -156,7 +157,8 @@ class Comment(db.Model):
     task_id = db.Column(db.Integer, db.ForeignKey('tasks.id'),
                         nullable=False)
     description = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False) # by which user was the comment made
+
 
     def to_dict(self):
         return {

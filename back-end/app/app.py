@@ -10,6 +10,8 @@ from .routes.commentsPanel import commentsPanel_bp
 from .routes.calendar_routes import calPhases_bp
 from .routes.mytasks import task_bp
 from .routes.subtasks import subtask_bp
+from .routes.creation_form_routes import creationForm_bp
+from .routes.myprojects_routes import myProjects_bp
 
 
 app = Flask(__name__)
@@ -50,6 +52,8 @@ app.register_blueprint(commentsPanel_bp)
 app.register_blueprint(calPhases_bp)
 app.register_blueprint(task_bp)
 app.register_blueprint(subtask_bp)
+app.register_blueprint(creationForm_bp)
+app.register_blueprint(myProjects_bp)
 
 
 if __name__ == "__main__":
