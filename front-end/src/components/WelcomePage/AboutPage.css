@@ -1,0 +1,77 @@
+/* AboutPage.css */
+
+.about-container {
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h1{
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+.about-content h2 {
+  text-align: center;
+  color: #2a81e5;
+}
+
+.about-content p,
+.about-content ul {
+  color: #555;
+}
+
+.team-members {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.team-member p {
+  color: #777;
+}
+
+.values ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.values ul li {
+  background: #e9ecef;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.press-awards {
+  margin-top: 30px;
+}
