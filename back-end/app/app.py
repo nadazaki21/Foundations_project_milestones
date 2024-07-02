@@ -4,7 +4,6 @@ from flask_migrate import Migrate
 from flask_session import Session
 from flask_cors import CORS
 from .database import db
-# from flask_sqlalchemy import SQLAlchemy
 from .routes.auth import auth_bp
 from .routes.taskPanel import userTasks_bp
 from .routes.commentsPanel import commentsPanel_bp
@@ -14,7 +13,6 @@ from .routes.calendar_routes import calPhases_bp
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1510@localhost/pm'
-# db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 app.config['PERMANENT_SESSION_LIFETIME'] # default is 31 days 

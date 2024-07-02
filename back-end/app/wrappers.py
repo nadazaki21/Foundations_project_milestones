@@ -5,16 +5,6 @@ from .routes.auth import session
 
 
 
-def check_state():
-    print ( 'acessed check state function...........')
-    res = user_data() 
-    print(res[1] + res[2])
-    if res[2] == 200:
-        user_id = res[1].get('user_id')
-        print(user_id)
-        return user_id
-    else:
-        return res[2]
     
 def get_user_if_logged(f):
     @wraps(f)
