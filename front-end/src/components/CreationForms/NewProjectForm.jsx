@@ -1,12 +1,11 @@
-// NewProjectForm.jsx
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectForm from './ProjectForm';
 import PhaseForm from './PhaseForm';
 import TaskForm from './TaskForm';
 import SubtaskForm from './SubtaskForm';
-import './NewProjectForm.css'; // Import CSS file for styling
+import './NewProjectForm.css';
 import SubmissionPage from './SubmissionPage';
+import axios from 'axios';
 
 const NewProjectForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -19,9 +18,30 @@ const NewProjectForm = () => {
   const nextStep = () => setCurrentStep(currentStep + 1);
   const prevStep = () => setCurrentStep(currentStep - 1);
 
+  const getPhases = () => axios.get('http://localhost:5000/creation_form/phases?project_id=${projectData.project_id}',
+      {
+        withCredentials: true 
+      },
+    )
+    .then(response => {
+      console.log(response.data);
+      const data = response.data
+      setPhases(data)
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+  useEffect(() => {
+    if (currentStep === 2) {
+      console.log('Fetching phases for project ID:', projectData.project_id);
+      getPhases();
+    }
+  }, [currentStep]);
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Submit project data and structures to backend or perform final actions
     console.log('Project data:', projectData);
     console.log('Phases:', phases);
     setSubmitted(true);
@@ -32,6 +52,8 @@ const NewProjectForm = () => {
       <SubmissionPage projectData={projectData} phases={phases} />
     );
   }
+
+  
 
   return (
     <div className="form-container">
@@ -50,11 +72,13 @@ const NewProjectForm = () => {
           />
         </div>
         <div className={`form-step ${currentStep === 2 ? 'active' : ''}`}>
+          {/* {console.log("hi from first page " + projectData.project_id)} */}
           <PhaseForm
             phases={phases}
             setPhases={setPhases}
             nextStep={nextStep}
             prevStep={prevStep}
+            project_id = {projectData.project_id}
           />
         </div>
         <div className={`form-step ${currentStep === 3 ? 'active' : ''}`}>
@@ -76,6 +100,7 @@ const NewProjectForm = () => {
       </div>
     </div>
   );
+
 };
 
 export default NewProjectForm;
