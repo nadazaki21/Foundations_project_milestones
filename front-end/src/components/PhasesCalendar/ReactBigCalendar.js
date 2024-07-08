@@ -81,7 +81,7 @@ const PhaseCalendar = () => {
 
   const getColorByProject = (projectId) => {
     const colors = {
-      1: '#FF5733', // Color for project with ID 1
+      1: '#FFFFFF', // Color for project with ID 1
       2: '#33FF57', // Color for project with ID 2
       3: '#3357FF', // Color for project with ID 3
       4: '#FF33FF', // Color for project with ID 4

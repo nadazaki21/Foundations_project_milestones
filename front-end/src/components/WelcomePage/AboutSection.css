@@ -1,0 +1,90 @@
+/* AboutSection.css */
+
+.about-section {
+  padding: 50px;
+  background: linear-gradient(135deg, #f9f9f9 25%, #e0e0e0 100%);
+  border: 1px solid #ccc;
+  margin: 40px auto;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.about-section p {
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #555;
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+.about-section a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
+
+.team-section h3 {
+  margin-top: 35px;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8em;
+  border-bottom: 2px solid #1e90ff;
+  display: inline-block;
+}
+
+.team-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.team-section li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.team-section li:hover {
+  transform: translateY(-5px);
+}
+
+.team-section h4 {
+  display: inline;
+  margin-right: 10px;
+  color: #1e90ff;
+  font-size: 1.3em;
+}
+
+.team-section a {
+  margin-right: 10px;
+  color: #1e90ff;
+  font-weight: normal;
+}
+
+.team-section a:hover {
+  text-decoration: underline;
+}
+
+.about-section p:last-child {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 30px;
+}

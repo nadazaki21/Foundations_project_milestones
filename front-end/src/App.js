@@ -7,6 +7,8 @@ import PhaseCalendar from './components/PhasesCalendar/ReactBigCalendar';
 import NewProjectForm from './components/CreationForms/NewProjectForm'
 import MyProjects from './components/MyProjects/MyProjects';
 import MyTasksPage from './components/MyTasks/MyTasksPage';
+import WelcomePage from './components/WelcomePage/WelcomePage';
+import AboutSection from './components/WelcomePage/AboutSection';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +17,14 @@ import {
 
 
 const router = createBrowserRouter([
+  {
+    path: "/welcome",
+    element: <WelcomePage/>
+  },
+  {
+    path: "/about",
+    element: <AboutSection/>
+  },
   {
     path: "/",
     element: <DashBoard/>,

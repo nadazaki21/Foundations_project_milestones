@@ -17,7 +17,7 @@ from .routes.myprojects_routes import myProjects_bp
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1510@localhost/pm'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1230@localhost/try'
 
 migrate = Migrate(app, db)
 
