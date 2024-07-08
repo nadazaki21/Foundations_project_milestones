@@ -1,45 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundations Project Milestones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
 
-# Foundations Project Milestones
+  <h1>Foundations Project Milestones</h1>
 
-Welcome to the Foundations Project Milestones repository! This project is a comprehensive task management system designed to facilitate project planning, task assignment, and progress tracking. It is built using React for the frontend, Flask for the backend, and integrates with a PostgreSQL database. This README provides an overview of the project structure, setup instructions, and other relevant details.
+  <p>Welcome to the Foundations Project Milestones repository! This project is a comprehensive task management system designed to facilitate project planning, task assignment, and progress tracking. It is built using React for the frontend, Flask for the backend, and integrates with a PostgreSQL database. This README provides an overview of the project structure, setup instructions, and other relevant details.</p>
 
-## Table of Contents
+  <h2>Table of Contents</h2>
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Setup Instructions](#setup-instructions)
-- [Credits](#credits)
-- [License](#license)
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#technologies-used">Technologies Used</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
+    <li><a href="#setup-instructions">Setup Instructions</a></li>
+    <li><a href="#credits">Credits</a></li>
+    <li><a href="#license">License</a></li>
+  </ul>
 
-## Introduction
+  <h2 id="introduction">Introduction</h2>
 
-Foundations Project Milestones is a web-based application aimed at enhancing project management efficiency. It allows users to create projects, define phases, assign tasks with subtasks, and track progress seamlessly. This README provides essential information to set up the project locally and contribute to its development.
+  <p>Foundations Project Milestones is a web-based application aimed at enhancing project management efficiency. It allows users to create projects, define phases, assign tasks with subtasks, and track progress seamlessly. This README provides essential information to set up the project locally and contribute to its development.</p>
 
-## Features
+  <h2 id="features">Features</h2>
 
-- **User Authentication:** Secure login and signup functionalities.
-- **Project Management:** Create and manage multiple projects.
-- **Phase and Task Tracking:** Define project phases and assign tasks to them.
-- **Task Details and Subtasks:** View detailed task information and track subtask completion.
-- **Calendar Integration:** Visualize project phases and their timelines using a calendar view.
+  <ul>
+    <li><strong>User Authentication:</strong> Secure login and signup functionalities.</li>
+    <li><strong>Project Management:</strong> Create and manage multiple projects.</li>
+    <li><strong>Phase and Task Tracking:</strong> Define project phases and assign tasks to them.</li>
+    <li><strong>Task Details and Subtasks:</strong> View detailed task information and track subtask completion.</li>
+    <li><strong>Calendar Integration:</strong> Visualize project phases and their timelines using a calendar view.</li>
+  </ul>
 
-## Technologies Used
+  <h2 id="technologies-used">Technologies Used</h2>
 
-- **Frontend:** React.js, React Router, React Big Calendar, Bootstrap
-- **Backend:** Flask, Flask RESTful, SQLAlchemy
-- **Database:** PostgreSQL
-- **API Integration:** Axios for HTTP requests
-- **Styling:** CSS, Bootstrap CSS
+  <ul>
+    <li><strong>Frontend:</strong> React.js, React Router, React Big Calendar</li>
+    <li><strong>Backend:</strong> Flask, Flask migration, Flask sessions, BluePrint, SQLAlchemy</li>
+    <li><strong>Database:</strong> MYSQL</li>
+    <li><strong>API Integration:</strong> Axios for HTTP requests</li>
+    <li><strong>Styling:</strong> CSS</li>
+  </ul>
 
-## Project Structure
+  <h2 id="project-structure">Project Structure</h2>
 
-The project directory is organized as follows:
+  <p>The project directory is organized as follows:</p>
 
-
+  <pre>
 Foundations_project_milestones/
-│
 ├── frontend/
 │   ├── public/
 │   ├── src/
@@ -58,7 +92,6 @@ Foundations_project_milestones/
 │   ├── package.json
 │   ├── README.md
 │   └── ...
-│
 ├── backend/
 │   ├── app/
 │   │   ├── models.py
@@ -68,65 +101,59 @@ Foundations_project_milestones/
 │   ├── config.py
 │   ├── run.py
 │   └── ...
-│
 ├── README.md
 ├── .gitignore
 └── ...
+  </pre>
 
+  <h2 id="setup-instructions">Setup Instructions</h2>
 
-- **frontend/**: Contains the React.js frontend application.
-- **backend/**: Includes the Flask backend server and database configurations.
-- **README.md**: This file providing an overview of the project.
+  <ol>
+    <li><strong>Clone the repository:</strong>
+      <pre><code>git clone https://github.com/nadazaki21/Foundations_project_milestones.git
+cd Foundations_project_milestones</code></pre>
+    </li>
+    <li><strong>Setup Backend:</strong>
+      <ul>
+        <li>Navigate to the <code>backend/</code> directory.</li>
+        <li>Create a virtual environment (optional but recommended).</li>
+        <li>Install dependencies:
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>Setup the database:
+          <pre><code>flask db upgrade</code></pre>
+        </li>
+        <li>Start the Flask server:
+          <pre><code>flask run</code></pre>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Setup Frontend:</strong>
+      <ul>
+        <li>Navigate to the <code>frontend/</code> directory.</li>
+        <li>Install dependencies:
+          <pre><code>npm install</code></pre>
+        </li>
+        <li>Start the React development server:
+          <pre><code>npm start</code></pre>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Access the Application:</strong> Open your web browser and go to <code>http://localhost:3000</code> to view the application.</li>
+  </ol>
 
-## Setup Instructions
+  <h2 id="credits">Credits</h2>
 
-To run this project locally, follow these steps:
+  <p>This project is developed and maintained by:</p>
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/nadazaki21/Foundations_project_milestones.git
-   cd Foundations_project_milestones
-   ```
+  <ul>
+    <li><a href="https://github.com/nadazaki21">Nada Zaki</a></li>
+    <li><a href="https://github.com/mahmoudelsherbine">Mahmoud El Sherbine</a></li>
+  </ul>
 
-2. **Setup Backend**:
-   - Navigate to the `backend/` directory.
-   - Create a virtual environment (optional but recommended).
-   - Install dependencies:
-     ```bash
-     pip install -r requirements.txt
-     ```
-   - Setup the database:
-     ```bash
-     flask db upgrade
-     ```
-   - Start the Flask server:
-     ```bash
-     flask run
-     ```
+  <h2 id="license">License</h2>
 
-3. **Setup Frontend**:
-   - Navigate to the `frontend/` directory.
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-   - Start the React development server:
-     ```bash
-     npm start
-     ```
+  <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
-4. **Access the Application**:
-   - Open your web browser and go to `http://localhost:3000` to view the application.
-
-## Credits
-
-This project is developed and maintained by:
-
-- [Nada Zaki](https://github.com/nadazaki21)
-- [Mahmoud El Sherbine](https://github.com/mahmoudelsherbine)
-
-Special thanks to [Your Name] for contributions and support.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+</body>
+</html>
