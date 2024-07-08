@@ -58,15 +58,13 @@ Foundations_project_milestones/
 │   └── ...
 ├── backend/
 │   ├── app/
-│   │   ├── models.py
-│   │   ├── routes.py
+│   │   ├── models/
+│   │   ├── routes/
 │   │   └── ...
 │   ├── migrations/
-│   ├── config.py
-│   ├── run.py
+│   ├── app.py
 │   └── ...
 ├── README.md
-├── .gitignore
 └── ...
   </pre>
 
