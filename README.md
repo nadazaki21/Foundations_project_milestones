@@ -1,71 +1,40 @@
+# Foundations Project Milestones
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      color: #333;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    code {
-      background-color: #f4f4f4;
-      padding: 5px;
-      border-radius: 3px;
-    }
-  </style>
-</head>
-<body>
+Welcome to the Foundations Project Milestones repository! This project is a comprehensive task management system designed to facilitate project planning, task assignment, and progress tracking. It is built using React for the frontend, Flask for the backend, and integrates with a PostgreSQL database. This README provides an overview of the project structure, setup instructions, and other relevant details.
 
-  <h1>Foundations Project Milestones</h1>
+## Table of Contents
 
-  <p>Welcome to the Foundations Project Milestones repository! This project is a comprehensive task management system designed to facilitate project planning, task assignment, and progress tracking. It is built using React for the frontend, Flask for the backend, and integrates with a PostgreSQL database. This README provides an overview of the project structure, setup instructions, and other relevant details.</p>
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Setup Instructions](#setup-instructions)
+- [Credits](#credits)
+- [License](#license)
 
-  <h2>Table of Contents</h2>
+## Introduction
 
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#technologies-used">Technologies Used</a></li>
-    <li><a href="#project-structure">Project Structure</a></li>
-    <li><a href="#setup-instructions">Setup Instructions</a></li>
-    <li><a href="#credits">Credits</a></li>
-    <li><a href="#license">License</a></li>
-  </ul>
+Foundations Project Milestones is a web-based application aimed at enhancing project management efficiency. It allows users to create projects, define phases, assign tasks with subtasks, and track progress seamlessly. This README provides essential information to set up the project locally and contribute to its development.
 
-  <h2 id="introduction">Introduction</h2>
+## Features
 
-  <p>Foundations Project Milestones is a web-based application aimed at enhancing project management efficiency. It allows users to create projects, define phases, assign tasks with subtasks, and track progress seamlessly. This README provides essential information to set up the project locally and contribute to its development.</p>
+- **User Authentication:** Secure login and signup functionalities.
+- **Project Management:** Create and manage multiple projects.
+- **Phase and Task Tracking:** Define project phases and assign tasks to them.
+- **Task Details and Subtasks:** View detailed task information and track subtask completion.
+- **Calendar Integration:** Visualize project phases and their timelines using a calendar view.
 
-  <h2 id="features">Features</h2>
+## Technologies Used
 
-  <ul>
-    <li><strong>User Authentication:</strong> Secure login and signup functionalities.</li>
-    <li><strong>Project Management:</strong> Create and manage multiple projects.</li>
-    <li><strong>Phase and Task Tracking:</strong> Define project phases and assign tasks to them.</li>
-    <li><strong>Task Details and Subtasks:</strong> View detailed task information and track subtask completion.</li>
-    <li><strong>Calendar Integration:</strong> Visualize project phases and their timelines using a calendar view.</li>
-  </ul>
+- **Frontend:** React.js, React Router, React Big Calendar
+- **Backend:** Flask, Flask migration, Flask sessions, BluePrint, SQLAlchemy
+- **Database:** MYSQL
+- **API Integration:** Axios for HTTP requests
+- **Styling:** CSS
 
-  <h2 id="technologies-used">Technologies Used</h2>
+## Project Structure
 
-  <ul>
-    <li><strong>Frontend:</strong> React.js, React Router, React Big Calendar</li>
-    <li><strong>Backend:</strong> Flask, Flask migration, Flask sessions, BluePrint, SQLAlchemy</li>
-    <li><strong>Database:</strong> MYSQL</li>
-    <li><strong>API Integration:</strong> Axios for HTTP requests</li>
-    <li><strong>Styling:</strong> CSS</li>
-  </ul>
-
-  <h2 id="project-structure">Project Structure</h2>
-
-  <p>The project directory is organized as follows:</p>
+The project directory is organized as follows:
 
   <pre>
 Foundations_project_milestones/
