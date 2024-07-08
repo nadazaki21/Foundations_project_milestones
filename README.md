@@ -1,4 +1,4 @@
-```
+
 # Foundations Project Milestones
 
 Welcome to the Foundations Project Milestones repository! This project is a comprehensive task management system designed to facilitate project planning, task assignment, and progress tracking. It is built using React for the frontend, Flask for the backend, and integrates with a PostgreSQL database. This README provides an overview of the project structure, setup instructions, and other relevant details.
@@ -37,7 +37,7 @@ Foundations Project Milestones is a web-based application aimed at enhancing pro
 
 The project directory is organized as follows:
 
-```
+
 Foundations_project_milestones/
 │
 ├── frontend/
@@ -72,7 +72,7 @@ Foundations_project_milestones/
 ├── README.md
 ├── .gitignore
 └── ...
-```
+
 
 - **frontend/**: Contains the React.js frontend application.
 - **backend/**: Includes the Flask backend server and database configurations.
@@ -130,4 +130,3 @@ Special thanks to [Your Name] for contributions and support.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
