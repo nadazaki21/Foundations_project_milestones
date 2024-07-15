@@ -10,6 +10,7 @@ task_bp = Blueprint('task', __name__)
 @task_bp.route('/mytasks', methods=['GET'], strict_slashes=False)
 @get_user_if_logged
 def get_user_tasks(user_id):
+    """returns all tasks assigned to the logged in user"""
     try:
         tasks = Task.query.filter_by(assigned_member=user_id).all()
         tasks_list = [task.to_dict() for task in tasks]
@@ -21,6 +22,7 @@ def get_user_tasks(user_id):
 @task_bp.route('/mytasks/<int:id>', methods=['PUT'])
 @get_user_if_logged
 def update_task(user_id, id):
+    """updates a task"""
     try:
         # Fetch the task from the database
         task = Task.query.get(id)

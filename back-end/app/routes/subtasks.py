@@ -7,6 +7,7 @@ subtask_bp = Blueprint('subtask', __name__)
 
 @subtask_bp.route('/subtasks/<int:subtask_id>', methods=['PUT'])
 def edit_subtask(subtask_id):
+    """updates a subtask"""
     data = request.json
     description = data.get('description')
     status = data.get('status')

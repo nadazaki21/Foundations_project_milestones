@@ -8,7 +8,7 @@ auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/signup', methods=['POST'], strict_slashes = False)
 def signup():
-   
+    """creates a new user"""
     data = request.json
     # print("Request data:", data)
     username = data.get('username')
@@ -39,7 +39,7 @@ def signup():
 
 @auth_bp.route('/user-data', methods=['GET'], strict_slashes = False)
 def user_data():
-   
+    """ returns info of current logged in user if any user is actually logged in"""
     if not session.get('user_id'):
         return jsonify({'message': 'Not loged in'}), 401 # to check if a user is logged in or not
     
@@ -53,7 +53,7 @@ def user_data():
 
 @auth_bp.route('/log-in', methods=['POST'], strict_slashes = False)
 def login():
-    
+    """ checks if user exists, if he does and credentials match, log him in (create a seesion for him)"""
     data = request.json
     email = data.get('email')
     password = data.get('password')

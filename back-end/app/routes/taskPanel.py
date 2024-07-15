@@ -13,7 +13,7 @@ def test(user_id):
 @userTasks_bp.route('/ongoing-tasks', methods=['GET'], strict_slashes = False)
 @get_user_if_logged 
 def ongoing_taks(user_id):
-
+    """returns all tasks assigned to the logged in user"""
     all_user_tasks_dict = {}
     i = 1
     user_tasks = Task.query.filter_by(assigned_member=user_id).all()   

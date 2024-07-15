@@ -11,7 +11,7 @@ commentsPanel_bp = Blueprint('commentsPanel', __name__)
 @commentsPanel_bp.route('/recent-comments', methods=['GET'], strict_slashes = False)
 @get_user_if_logged 
 def recent_comments(user_id):
-
+    """returns comments on tasks assigned to the logged in user"""  
     all_user_comments_dict = {}
     i = 1
     comment_for_user = Comment.query.filter_by(user_id=user_id).all()   
